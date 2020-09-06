@@ -2,7 +2,7 @@
 
 envsubst < /home/steam/server.cfg.tpl > /home/steam/server.cfg
 
-/home/appuser/l4d2server/srcds_run \
+/opt/server/srcds_run \
   -console \
   -game left4dead2 \
   -strictportbind \
