@@ -1,6 +1,6 @@
 #!/bin/bash
 
-envsubst < /home/appuser/server.cfg.tpl > /home/appuser/server.cfg
+envsubst < /home/steam/server.cfg.tpl > /home/steam/server.cfg
 
 /home/appuser/l4d2server/srcds_run \
   -console \
@@ -9,5 +9,5 @@ envsubst < /home/appuser/server.cfg.tpl > /home/appuser/server.cfg
   -ip 0.0.0.0 \
   -port 27015 \
   +maxplayers 12 \
-  +exec /home/appuser/server.cfg \
-  +map c5m1_waterfront
+  +exec /home/steam/server.cfg \
+  +map $(/home/steam/random_map.sh)

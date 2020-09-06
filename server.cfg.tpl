@@ -1,5 +1,3 @@
-
-
 //--> This is the name for your server
 hostname "${SV_HOSTNAME}"
 
@@ -21,7 +19,11 @@ sv_gametypes "coop, versus, survival, mutation"
 mp_gamemode "coop, versus, survival, mutation"
 
 //--> Steam group # to assign to server
-sv_steamgroup 0
+sv_steamgroup "${SV_STEAMGROUP}"
+
+mp_disable_autokick "1"
+sv_voiceenable "1"
+sv_consistency "1" // 1=Allow custom skins
 
 sm_cvar fps_max 0
 //--> Uncaps the servers maxfps limit
@@ -30,7 +32,7 @@ sm_cvar fps_max 0
 //--> Do not connect to the Match Making Service
 //--> "0" = Off
 //--> "1" = On
-sv_steamgroup_exclusive 0
+sv_steamgroup_exclusive "${SV_STEAMGROUP_EXCLUSIVE}
 
 //--> When Enabled, Steamgroup members take priority when joining
 //--> The server. However, anyone may join as long as a steamgroup
@@ -44,7 +46,7 @@ sv_steamgroup_exclusive 0
 //Allow connections without creating lobby (connect IP:PORT)
 //--> "0" = Off
 //--> "1" = On
-sv_allow_lobby_connect_only 1
+sv_allow_lobby_connect_only 0
 
 //--> Default is "0". When Enabled, cannot connect to
 //--> Games currently in progress.
@@ -65,7 +67,7 @@ sv_alltalk 0
 //--> middle east - sv_region 6
 //--> africa - sv_region 7
 //--> world - sv_region 255
-sv_region 4
+sv_region 255
 
 //--> Allow use of cheats
 //--> "0" = Off
