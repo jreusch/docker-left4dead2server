@@ -37,6 +37,7 @@ RUN ./steamcmd.sh +login anonymous +force_install_dir /opt/server/ +app_update 2
 COPY --chown=steam server.cfg.tpl /home/steam/server.cfg.tpl
 COPY --chown=steam entrypoint.sh /home/steam/entrypoint.sh
 COPY --chown=steam random_map.sh /home/steam/random_map.sh
+RUN chmod +x /home/steam/random_map.sh
 
 EXPOSE 27015
 EXPOSE 27015/udp
