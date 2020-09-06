@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # install dependencies
 RUN apt-get update && \
-    apt-get install -y curl && \
+    apt-get install -y curl gettext-base && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
