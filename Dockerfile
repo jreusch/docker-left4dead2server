@@ -32,7 +32,13 @@ WORKDIR /opt/steamcmd
 # valid certificate as of now...
 RUN curl -s https://steamcdn-a.akamaihd.net/installer/steamcmd_linux.tar.gz | tar -vxz
 
-RUN ./steamcmd.sh +login anonymous +force_install_dir /opt/server/ +app_update 222860 validate +quit
+
+# whyever the symbolic link is needed, but steam crahses without it...
+# https://developer.valvesoftware.com/wiki/SteamCMD#Unable_to_locate_a_running_instance_of_Steam
+RUN ./steamcmd.sh +login anonymous +quit &&\
+    mkdir -p /home/steam/.steam/sdk32 &&\
+    ln -s /opt/steamcmd/linux32/steamclient.so /home/steam/.steam/sdk32/steamclient.so &&\
+    ./steamcmd.sh +login anonymous +force_install_dir /opt/server/ +app_update 222860 validate +quit
 
 COPY --chown=steam server.cfg.tpl /home/steam/server.cfg.tpl
 COPY --chown=steam entrypoint.sh /home/steam/entrypoint.sh
