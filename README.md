@@ -14,7 +14,7 @@ Adaptions:
 Copy .env.example to .env and adapt the values!
 
 ```bash
-docker build -t lef4dead2server .
+docker build -t left4dead2server .
 docker run --rm --env-file .env -p 27015:27015 -p 27015:27015/udp left4dead2server
 ```
 
