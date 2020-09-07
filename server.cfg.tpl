@@ -32,7 +32,7 @@ sm_cvar fps_max 0
 //--> Do not connect to the Match Making Service
 //--> "0" = Off
 //--> "1" = On
-sv_steamgroup_exclusive "${SV_STEAMGROUP_EXCLUSIVE}
+sv_steamgroup_exclusive ${SV_STEAMGROUP_EXCLUSIVE}
 
 //--> When Enabled, Steamgroup members take priority when joining
 //--> The server. However, anyone may join as long as a steamgroup
